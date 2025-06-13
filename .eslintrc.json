@@ -1,0 +1,8 @@
+{
+  // ... phần khác ...
+  "rules": {
+    "@next/next/no-img-element": "off"
+    // ... các rule khác ...
+  }
+}
+
