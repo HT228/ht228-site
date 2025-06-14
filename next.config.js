@@ -1,11 +1,15 @@
+// next.config.js
 /** @type {import('next').NextConfig} */
 const nextConfig = {
+  reactStrictMode: true,
   images: {
-    unoptimized: true,
-    formats: ['image/avif', 'image/webp'], // chỉ định đúng định dạng được Next hỗ trợ
-  },
-  experimental: {
-    appDir: false, // tránh cảnh báo appDir
+    remotePatterns: [
+      {
+        protocol: "https",
+        hostname: "ht228.vn",
+        pathname: "/**",
+      },
+    ],
   },
 };
 

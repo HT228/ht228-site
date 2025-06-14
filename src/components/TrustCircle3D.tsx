@@ -8,18 +8,21 @@ const trustIcons = [
     back: "/assets/images/mat2vanchuyen.jpg",
     label: "Giao vận chuyên nghiệp",
     desc: "Ship toàn quốc – An toàn – Nhanh chóng",
+    aura: "from-blue-400 via-cyan-200 to-emerald-200",
   },
   {
     front: "/assets/images/check.svg",
     back: "/assets/images/mat2kiemtra.png",
     label: "Kiểm tra 2 lớp",
     desc: "Đóng gói tiêu chuẩn – Chống bom hàng",
+    aura: "from-violet-400 via-pink-200 to-orange-200",
   },
   {
     front: "/assets/images/quality.svg",
     back: "/assets/images/mat2chatluong.png",
     label: "Chất lượng đảm bảo",
     desc: "Cam kết chuẩn HT228 – Đổi trả 1-1",
+    aura: "from-yellow-300 via-orange-200 to-pink-200",
   },
 ];
 
@@ -30,104 +33,68 @@ export default function TrustCircle3D() {
   };
 
   return (
-    <section className="py-10" aria-label="Khối lý do khách chọn HT228">
-      <h2 className="text-2xl md:text-3xl font-bold text-center mb-8 text-blue-700 drop-shadow">
+    <section className="py-12 px-2 md:px-0" aria-label="Khối lý do khách chọn HT228">
+      <h2 className="text-2xl md:text-3xl font-bold text-center mb-10 text-blue-700 drop-shadow-lg tracking-wide">
         Vì sao khách chọn HT228?
       </h2>
-      <div className="flex justify-center gap-8 flex-row flex-nowrap overflow-x-auto">
+      <div className="flex justify-center gap-8 flex-nowrap overflow-x-auto">
         {trustIcons.map((t, i) => (
           <div
             key={i}
-            className="group cursor-pointer select-none"
+            className="group cursor-pointer select-none relative"
             onMouseEnter={() => handleFlip(i)}
             onMouseLeave={() => handleFlip(i)}
-            style={{ perspective: 1200, width: 230, height: 270 }}
+            style={{ perspective: 1300, minWidth: 220, height: 285 }}
             aria-label={`Lý do ${i + 1}: ${t.label}`}
           >
+            <div className={`absolute inset-0 rounded-full blur-3xl opacity-60 z-0 transition duration-700 scale-110 pointer-events-none bg-gradient-to-br ${t.aura}`}></div>
             <motion.div
-              className="relative w-full h-full rounded-3xl glassmorphism border-4 border-white shadow-2xl group-hover:shadow-blue-400 transition-all duration-700"
+              className="relative w-full h-full rounded-3xl glassmorphism border-4 border-white shadow-2xl group-hover:shadow-blue-400 transition-all duration-700 z-10"
               style={{
                 transformStyle: "preserve-3d",
-                boxShadow: flipped[i]
-                  ? "0 0 70px 28px #42a5f5, 0 0 34px 9px #ffd700"
-                  : "0 12px 44px 0 #42a5f5, 0 3px 12px #9575cd",
-                background:
-                  "linear-gradient(120deg,rgba(255,255,255,0.74),#e3f0ff 82%)",
-                border: flipped[i]
-                  ? "4px solid #42a5f5"
-                  : "4px solid #fff",
+                background: "linear-gradient(120deg,rgba(255,255,255,0.85),#e3f0ff 88%)",
+                border: flipped[i] ? "4px solid #42a5f5" : "4px solid #fff",
               }}
               animate={{
                 rotateY: flipped[i] ? 180 : 0,
-                scale: flipped[i] ? 1.11 : 1,
-                filter: flipped[i]
-                  ? "drop-shadow(0 0 44px #42a5f5) brightness(1.19)"
-                  : "none",
+                scale: flipped[i] ? 1.13 : 1,
+                filter: flipped[i] ? "drop-shadow(0 0 50px #42a5f5) brightness(1.17)" : "none",
               }}
               whileHover={{
-                scale: 1.13,
-                boxShadow: "0 0 92px 29px #42a5f5, 0 0 44px 12px #ffd700",
+                scale: 1.15,
+                boxShadow: "0 0 110px 32px #42a5f5, 0 0 50px 16px #ffd700",
               }}
             >
-              {/* Mặt trước */}
-              <div
-                className="absolute inset-0 flex flex-col items-center justify-center"
-                style={{ backfaceVisibility: "hidden" }}
-              >
-                <div className="w-24 h-24 rounded-full overflow-hidden bg-white/80 shadow-xl border-2 border-indigo-400 flex items-center justify-center group-hover:shadow-glow mb-2">
-                  <img src={t.front} alt={t.label} className="w-20 h-20 object-contain" />
+              <div className="absolute inset-0 flex flex-col items-center justify-center" style={{ backfaceVisibility: "hidden" }}>
+                <div className="w-28 h-28 rounded-full overflow-hidden bg-white/80 shadow-2xl border-2 border-indigo-400 flex items-center justify-center mb-2 animate-spin-slow relative">
+                  <img src={t.front} alt={t.label} className="w-24 h-24 object-contain drop-shadow-lg" />
+                  <span className="absolute w-14 h-14 bg-white/20 left-2 top-2 rounded-full blur-2xl opacity-60 animate-pulse"></span>
                 </div>
-                <span className="font-bold text-blue-800 text-xl mt-2 mb-1 text-center">
-                  {t.label}
-                </span>
-                <span className="text-sm text-center text-gray-500 font-medium">
-                  {t.desc}
-                </span>
+                <span className="font-bold text-blue-800 text-lg mt-3 mb-1 text-center tracking-tight drop-shadow">{t.label}</span>
+                <span className="text-[15px] text-center text-gray-600 font-medium">{t.desc}</span>
               </div>
-              {/* Mặt sau */}
               <div
                 className="absolute inset-0 flex flex-col items-center justify-center z-10"
-                style={{
-                  transform: "rotateY(180deg)",
-                  backfaceVisibility: "hidden",
-                  filter: "drop-shadow(0 0 38px #42a5f5) blur(0.7px)",
-                }}
+                style={{ transform: "rotateY(180deg)", backfaceVisibility: "hidden", filter: "drop-shadow(0 0 38px #42a5f5) blur(0.8px)" }}
               >
-                <div className="w-24 h-24 rounded-full overflow-hidden shadow-2xl bg-white flex items-center justify-center mb-3 border-2 border-indigo-400">
-                  <img src={t.back} alt={`Mặt sau - ${t.label}`} className="w-20 h-20 object-cover transition-transform duration-500" />
+                <div className="w-28 h-28 rounded-full overflow-hidden shadow-2xl bg-white flex items-center justify-center mb-3 border-2 border-indigo-400 relative">
+                  <img src={t.back} alt={`Mặt sau - ${t.label}`} className="w-24 h-24 object-cover" />
+                  <span className="absolute w-12 h-12 bg-blue-400/20 right-3 bottom-1 rounded-full blur-2xl opacity-50 animate-pulse"></span>
                 </div>
-                {/* CHỮ KHÔNG BỊ NGƯỢC */}
-                <span
-                  className="text-base text-blue-700 font-semibold mt-2 animate-fadeIn text-center"
-                  style={{
-                    transform: "rotateY(180deg)",
-                    display: "block",
-                    maxWidth: 170,
-                  }}
-                >
-                  Uy tín – bảo hành chính hãng
-                </span>
+                <span className="text-xs text-blue-700 mt-1 font-semibold tracking-wide">Uy tín – bảo hành chính hãng</span>
               </div>
             </motion.div>
           </div>
         ))}
       </div>
-      {/* Hiệu ứng custom bóng glow */}
       <style>{`
         .glassmorphism {
-          background: rgba(255,255,255,0.70);
-          box-shadow: 0 7px 40px rgba(34,150,243,0.18), 0 2.5px 12px #ffd70036;
-          backdrop-filter: blur(11px);
+          background: rgba(255,255,255,0.69);
+          box-shadow: 0 6px 36px rgba(34,150,243,0.16), 0 1.5px 12px #ffd70044;
+          backdrop-filter: blur(10px);
         }
-        .shadow-glow {
-          box-shadow: 0 0 40px 13px #42a5f5, 0 0 24px 8px #ffd700;
-        }
-        @media (max-width: 900px) {
-          .glassmorphism {
-            min-width:180px;
-            min-height:220px;
-          }
-        }
+        @keyframes spin-slow { 0% { transform: rotate(0deg); } 100% { transform: rotate(18deg); } }
+        .animate-spin-slow { animation: spin-slow 7.5s linear infinite; }
       `}</style>
     </section>
   );

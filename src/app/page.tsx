@@ -1,39 +1,50 @@
+// src/app/page.tsx
 "use client";
-import SEO from "../components/SEO";
-import Topbar from "../components/Topbar";
-import Navbar from "../components/Navbar";
-import SearchBar from "../components/SearchBar";
+
+import SearchBar from "../components/Header/SearchBar";
 import BannerSlider from "../components/BannerSlider";
 import FlashDeal from "../components/FlashDeal";
 import TrustCircle3D from "../components/TrustCircle3D";
-import ProductCategorySection from "../components/ProductCategorySection";
-import Footer from "../components/Footer";
-import ZaloFloatingIcon from "../components/ZaloFloatingIcon";
+import ProductCircle3D from "../components/ProductCircle3D";
+import NewsPromo from "../components/NewsPromo";
+import FeaturedArticles from "../components/FeaturedArticles";
+import PopupGHSV from "../components/PopupGHSV";
+import CallToAction from "../components/CallToAction";
+import HookIntro from "../components/HookIntro";
+
+export const metadata = {
+  title: "HT228 – Tổng kho đóng gói thông minh | Giải pháp tối ưu cho shop online",
+  description: "Cung cấp xốp nổ, hộp carton, băng keo… freeship cho shop online Hà Nội, Bắc Bộ.",
+  metadataBase: new URL("https://ht228.vn"),
+  openGraph: {
+    url: "https://ht228.vn",
+    title: "HT228 – Tổng kho đóng gói thông minh",
+    description: "Cung cấp xốp nổ, hộp carton, băng keo… freeship cho shop online Hà Nội, Bắc Bộ.",
+    images: [{ url: "https://ht228.vn/og-image.png", width: 1200, height: 630 }],
+    siteName: "HT228",
+    locale: "vi_VN",
+    type: "website",
+  },
+  twitter: {
+    card: "summary_large_image",
+    site: "@HT228vn",
+  },
+};
 
 export default function Home() {
   return (
-    <>
-      <SEO
-        title="HT228 – Tổng kho đóng gói thông minh | Giải pháp tối ưu cho shop online"
-        description="Tổng kho HT228 – Cung cấp xốp nổ, hộp carton, băng keo, giải pháp đóng gói tiết kiệm, an toàn, freeship cho shop online Hà Nội, Bắc Bộ."
-        keywords="HT228, đóng gói, xốp nổ, hộp carton, vận chuyển, tiết kiệm, shop online, Hà Nội, Bắc Bộ"
-        image="https://ht228.vn/og-image.png"
-        url="https://ht228.vn"
-      />
-      <Topbar />
-      <Navbar />
-      <main className="min-h-screen bg-gradient-to-b from-blue-50 to-white text-gray-900 pb-32">
-        <div className="max-w-6xl mx-auto space-y-10">
-          <SearchBar />
-          <BannerSlider />
-          <FlashDeal />
-          <TrustCircle3D />
-          <ProductCategorySection />
-        </div>
-      </main>
-      <Footer />
-      <ZaloFloatingIcon />
-    </>
+    <div className="max-w-6xl mx-auto space-y-10 py-6">
+      <SearchBar />
+      <BannerSlider />
+      <FlashDeal />
+      <TrustCircle3D />
+      <ProductCircle3D />
+      <NewsPromo />
+      <FeaturedArticles />
+      <PopupGHSV />
+      <CallToAction />
+      <HookIntro />
+    </div>
   );
 }
 
