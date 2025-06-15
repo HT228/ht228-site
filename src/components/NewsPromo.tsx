@@ -19,7 +19,7 @@ export default function NewsPromo() {
   return (
     <div className="w-full max-w-4xl mx-auto mt-2">
       <div className="bg-yellow-50 border-l-4 border-yellow-400 py-2 px-4 rounded-xl shadow flex flex-col gap-2 md:flex-row md:gap-6 items-center">
-        {promos.map((promo, idx) => (
+        {promos.map((promo) => (
           <a
             href={promo.link}
             key={promo.title}

@@ -1,5 +1,6 @@
 "use client";
 import { useEffect, useState, useRef } from "react";
+import Image from "next/image";
 
 const banners = [
   { img: "/images/ht228-banner-1.webp", alt: "Xốp nổ HT228 bảo vệ hàng hóa tuyệt đối" },
@@ -36,13 +37,14 @@ export default function BannerSlider() {
       onMouseLeave={() => setIsHover(false)}
     >
       {/* Ảnh banner */}
-      <img
+      <Image
         src={banners[current].img}
         alt={banners[current].alt}
+        width={1200}
+        height={320}
         className="w-full object-cover h-56 md:h-80 transition-all duration-700 scale-105 hover:scale-110 rounded-3xl select-none"
         draggable={false}
-        loading="eager"
-        fetchpriority="high"
+        priority
       />
       {/* Nút prev/next */}
       <button

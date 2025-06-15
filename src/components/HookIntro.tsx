@@ -1,4 +1,3 @@
-/ src/components/HookIntro.tsx
 "use client";
 
 export default function HookIntro() {
