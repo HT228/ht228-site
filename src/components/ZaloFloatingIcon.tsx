@@ -1,8 +1,8 @@
-// src/components/CallToAction.tsx
+// src/components/ZaloFloatingIcon.tsx
 "use client";
 import { motion } from "framer-motion";
 
-export default function CallToAction() {
+export default function ZaloFloatingIcon() {
   return (
     <section className="py-10 bg-gradient-to-r from-indigo-600 to-blue-500 text-white text-center rounded-xl mx-4 md:mx-0">
       <h2 className="text-2xl md:text-3xl font-bold mb-4">Cần hỗ trợ? Đặt hàng ngay!</h2>
