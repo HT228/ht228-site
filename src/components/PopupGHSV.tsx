@@ -1,5 +1,6 @@
 "use client";
 import { useEffect, useState } from "react";
+import Image from "next/image";
 
 export default function PopupGHSV() {
   const [show, setShow] = useState(true);
@@ -29,9 +30,11 @@ export default function PopupGHSV() {
         >
           ×
         </button>
-        <img
+        <Image
           src="/images/ghsv_ht228.png"
           alt="Ưu đãi GHSV HT228"
+          width={160}
+          height={160}
           className="w-40 h-40 object-contain mb-2"
           draggable={false}
         />

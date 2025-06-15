@@ -1,19 +1,14 @@
 "use client";
+import Link from "next/link";
 
-export default function ZaloFloatingIcon() {
+export default function Navbar() {
   return (
-    <a
-      href="https://zalo.me/738042415649016822"
-      target="_blank"
-      rel="noopener noreferrer"
-      className="fixed bottom-6 right-6 z-50"
-    >
-      <img
-        src="/assets/images/zalo_oa.jpg"
-        alt="Zalo OA HT228"
-        className="w-14 h-14 rounded-full shadow-lg animate-bounce"
-      />
-    </a>
+    <nav className="w-full bg-white border-b py-3 flex space-x-8 px-4 sticky top-0 z-40">
+      <Link href="/">Trang chủ</Link>
+      <Link href="/san-pham">Sản phẩm</Link>
+      <Link href="/gioi-thieu">Giới thiệu</Link>
+      <Link href="/tin-tuc">Tin tức</Link>
+      <Link href="/khuyen-mai">Khuyến mãi</Link>
+    </nav>
   );
 }
-

@@ -1,6 +1,7 @@
 "use client";
 import { useState } from "react";
 import { motion } from "framer-motion";
+import Image from "next/image";
 
 const trustIcons = [
   {
@@ -67,7 +68,7 @@ export default function TrustCircle3D() {
             >
               <div className="absolute inset-0 flex flex-col items-center justify-center" style={{ backfaceVisibility: "hidden" }}>
                 <div className="w-28 h-28 rounded-full overflow-hidden bg-white/80 shadow-2xl border-2 border-indigo-400 flex items-center justify-center mb-2 animate-spin-slow relative">
-                  <img src={t.front} alt={t.label} className="w-24 h-24 object-contain drop-shadow-lg" />
+                  <Image src={t.front} alt={t.label} width={96} height={96} className="w-24 h-24 object-contain drop-shadow-lg" />
                   <span className="absolute w-14 h-14 bg-white/20 left-2 top-2 rounded-full blur-2xl opacity-60 animate-pulse"></span>
                 </div>
                 <span className="font-bold text-blue-800 text-lg mt-3 mb-1 text-center tracking-tight drop-shadow">{t.label}</span>
@@ -78,7 +79,7 @@ export default function TrustCircle3D() {
                 style={{ transform: "rotateY(180deg)", backfaceVisibility: "hidden", filter: "drop-shadow(0 0 38px #42a5f5) blur(0.8px)" }}
               >
                 <div className="w-28 h-28 rounded-full overflow-hidden shadow-2xl bg-white flex items-center justify-center mb-3 border-2 border-indigo-400 relative">
-                  <img src={t.back} alt={`Mặt sau - ${t.label}`} className="w-24 h-24 object-cover" />
+                  <Image src={t.back} alt={`Mặt sau - ${t.label}`} width={96} height={96} className="w-24 h-24 object-cover" />
                   <span className="absolute w-12 h-12 bg-blue-400/20 right-3 bottom-1 rounded-full blur-2xl opacity-50 animate-pulse"></span>
                 </div>
                 <span className="text-xs text-blue-700 mt-1 font-semibold tracking-wide">Uy tín – bảo hành chính hãng</span>

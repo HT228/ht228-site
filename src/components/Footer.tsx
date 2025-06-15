@@ -1,5 +1,5 @@
-/ src/components/Footer.tsx
 "use client";
+import Link from "next/link";
 
 export default function Footer() {
   return (
@@ -14,10 +14,26 @@ export default function Footer() {
         <div>
           <h3 className="font-bold mb-2">Điều hướng</h3>
           <ul className="space-y-1">
-            <li><a href="/" className="hover:underline">Trang chủ</a></li>
-            <li><a href="/san-pham" className="hover:underline">Sản phẩm</a></li>
-            <li><a href="/tin-tuc" className="hover:underline">Tin tức</a></li>
-            <li><a href="/lien-he" className="hover:underline">Liên hệ</a></li>
+            <li>
+              <Link href="/" className="hover:underline">
+                Trang chủ
+              </Link>
+            </li>
+            <li>
+              <Link href="/san-pham" className="hover:underline">
+                Sản phẩm
+              </Link>
+            </li>
+            <li>
+              <Link href="/tin-tuc" className="hover:underline">
+                Tin tức
+              </Link>
+            </li>
+            <li>
+              <Link href="/lien-he" className="hover:underline">
+                Liên hệ
+              </Link>
+            </li>
           </ul>
         </div>
         <div>
