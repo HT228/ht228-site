@@ -1,11 +1,11 @@
 /* app/globals.css */
 
-/* Import TailwindCSS */
-@import "tailwindcss/base";
-@import "tailwindcss/components";
-@import "tailwindcss/utilities";
+/* ✅ Import TailwindCSS theo chuẩn */
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
 
-/* Biến màu thương hiệu (tuỳ chỉnh theo HT228) */
+/* 🎨 Biến màu thương hiệu (tuỳ chỉnh theo HT228) */
 :root {
   --color-primary: #0066cc;
   --color-secondary: #0097a7;
@@ -22,7 +22,7 @@
   }
 }
 
-/* Tối ưu body chuẩn SEO */
+/* 📈 Tối ưu body chuẩn SEO */
 body {
   background: var(--color-bg);
   color: var(--color-text);
@@ -33,13 +33,14 @@ body {
   -moz-osx-font-smoothing: grayscale;
 }
 
-/* Giảm flash khi đổi theme */
+/* 🔄 Giảm flash khi đổi theme */
 html {
   scroll-behavior: smooth;
   background: var(--color-bg);
+  -webkit-text-size-adjust: 100%;
 }
 
-/* Hình ảnh tối ưu SEO */
+/* 🖼️ Hình ảnh tối ưu SEO */
 img {
   max-width: 100%;
   height: auto;
@@ -47,7 +48,7 @@ img {
   border-radius: var(--radius-lg);
 }
 
-/* Tiêu đề chuẩn SEO */
+/* 🧭 Tiêu đề chuẩn SEO */
 h1, h2, h3, h4 {
   font-family: var(--font-geist-sans), Arial, Helvetica, sans-serif;
   font-weight: 700;
@@ -56,6 +57,7 @@ h1, h2, h3, h4 {
   margin-bottom: 0.5em;
 }
 
+/* 🔗 Link rõ ràng & có hiệu ứng */
 a {
   color: var(--color-primary);
   text-decoration: none;
@@ -66,7 +68,7 @@ a:hover, a:focus {
   text-decoration: underline;
 }
 
-/* Button chuẩn, bo tròn lớn */
+/* 🧷 Button chuẩn UX */
 button, .btn {
   background: var(--color-primary);
   color: #fff;
@@ -81,7 +83,7 @@ button:hover, .btn:hover {
   background: var(--color-secondary);
 }
 
-/* Ẩn outline khi click chuột, chỉ hiển thị khi tab */
+/* 👁️ Accessibility focus rõ ràng */
 :focus:not(:focus-visible) {
   outline: none;
 }
@@ -90,7 +92,7 @@ button:hover, .btn:hover {
   outline-offset: 2px;
 }
 
-/* Scrollbar đẹp và không bị phô */
+/* 📜 Scrollbar thẩm mỹ */
 ::-webkit-scrollbar {
   width: 8px;
   background: var(--color-bg);
@@ -98,10 +100,5 @@ button:hover, .btn:hover {
 ::-webkit-scrollbar-thumb {
   background: var(--color-primary);
   border-radius: 8px;
-}
-
-/* Responsive - Đảm bảo không bị phóng to trên mobile */
-html {
-  -webkit-text-size-adjust: 100%;
 }
 

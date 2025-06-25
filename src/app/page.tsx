@@ -1,16 +1,16 @@
 // src/app/page.tsx
 "use client";
 
-import SearchBar from "../components/Header/SearchBar";
-import BannerSlider from "../components/BannerSlider";
-import FlashDeal from "../components/FlashDeal";
-import TrustCircle3D from "../components/TrustCircle3D";
-import ProductCircle3D from "../components/ProductCircle3D";
-import NewsPromo from "../components/NewsPromo";
-import FeaturedArticles from "../components/FeaturedArticles";
-import PopupGHSV from "../components/PopupGHSV";
-import CallToAction from "../components/CallToAction";
-import HookIntro from "../components/HookIntro";
+import SearchBar from "@/components/Header/SearchBar";
+import BannerSlider from "@/components/BannerSlider";
+import FlashDeal from "@/components/FlashDeal";
+import TrustCircle3D from "@/components/TrustCircle3D";
+import ProductCircle3D from "@/components/ProductCircle3D";
+import NewsPromo from "@/components/NewsPromo";
+import FeaturedArticles from "@/components/FeaturedArticles";
+import PopupGHSV from "@/components/PopupGHSV";
+import CallToAction from "@/components/CallToAction";
+import HookIntro from "@/components/HookIntro";
 
 export const metadata = {
   title: "HT228 – Tổng kho đóng gói thông minh | Giải pháp tối ưu cho shop online",

@@ -19,6 +19,7 @@
     "react-countdown": "^2.3.6",
     "react-dom": "^19.0.0",
     "react-stars": "^2.2.5",
+    "stats-gl": "^3.6.0",
     "swiper": "^11.2.8",
     "three": "^0.177.0"
   },
